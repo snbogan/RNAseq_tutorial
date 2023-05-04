@@ -1,0 +1,33 @@
+#05042023 draft (may the 4th be with you)
+#Make sure you are on campus or have set up your campus VPN
+
+#Log into the knot by entering temporary password
+ssh netid@knot7.cnsi.ucsb.edu
+
+#Make sure to reset your password using
+
+#Create directory for raw data
+mkdir RNA_tutorial
+mkdir RNA_tutorial/Raw_Data
+
+#Download rnaseq data (tbd)
+
+
+##Install conda
+#Command 1
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+
+#Command 2 - say yes to everything
+bash miniconda.sh
+
+#Command 3
+source ~/.bash_profile
+
+#Install fastqc using conda
+conda install -c bioconda fastqc
+
+#Install trimmomatic using conda
+conda install -c bioconda trimmomatic
+
+#Install parallel
+conda install -c conda-forge parallel
