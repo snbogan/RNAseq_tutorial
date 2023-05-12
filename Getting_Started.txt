@@ -1,17 +1,42 @@
-#05042023 draft (may the 4th be with you)
+#####################################################
+################## Getting started ################## 
+#####################################################
+
 #Make sure you are on campus or have set up your campus VPN
 
 #Log into the knot by entering temporary password
 ssh netid@knot7.cnsi.ucsb.edu
 
-#Make sure to reset your password using
+##Make sure to reset your password
+#Enter in old password then new password using command below
+yppasswd
+
+#Navigate to your directory
+cd /home/netid/
 
 #Create directory for raw data
 mkdir RNA_tutorial
 mkdir RNA_tutorial/Raw_Data
+cd RNA_tutorial/Raw_Data
 
-#Download rnaseq data (tbd)
+######################################################
+################## Downloading data ################## 
+######################################################
 
+##Download rnaseq data (DO NOT CLOSE COMPUTER UNTIL TRANSFER IS FINISHED)
+#Enter password when prompted: RNAseqdemo
+scp snbogan@knot7.cnsi.ucsb.edu:/home/snbogan/Cross_pHox_RNA/Raw_FastQs/evxkvqfhx/Un_DTSA735/Project_GHSB_Nova769P_Bogan/tutorial_libs/*.fq.gz
+
+#Create job script directory
+mkdir /home/netid/RNA_tutorial/job_scripts/
+
+#On local device, transfer job_script using below command /enter your password when prompted
+scp /path/to/fastqc_job.txt/on/your/device/ \
+netid@knot7.cnsi.ucsb.edu:/home/netid/RNA_tutorial/job_scripts/
+
+########################################################
+################## Installing packages #################
+########################################################
 
 ##Install conda
 #Command 1
@@ -31,3 +56,23 @@ conda install -c bioconda trimmomatic
 
 #Install parallel
 conda install -c conda-forge parallel
+
+###########################################################
+################## Run fastqc job script ################## 
+###########################################################
+
+#Go to and run job script
+
+
+##Install multiqc
+#Step 1
+conda create --name GVA-multiqc -c bioconda -c conda-forge multiqc fastqc
+
+#Step 2
+conda activate GVA-multiqc
+
+
+
+
+
+
