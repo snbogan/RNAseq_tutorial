@@ -31,7 +31,7 @@ scp snbogan@knot7.cnsi.ucsb.edu:/home/snbogan/Cross_pHox_RNA/Raw_FastQs/evxkvqfh
 mkdir /home/netid/RNA_tutorial/job_scripts/
 
 #On local device, transfer job_script using below command /enter your password when prompted
-scp /path/to/fastqc_job.txt/on/your/device/ \
+scp /path/to/RNAseq_tutorial_fastqc_job.txt/on/your/device/ \
 netid@knot7.cnsi.ucsb.edu:/home/netid/RNA_tutorial/job_scripts/
 
 ########################################################
@@ -62,7 +62,11 @@ conda install -c conda-forge parallel
 ###########################################################
 
 #Go to and run job script
+cd /home/netid/RNAseq_tutorial/job_scripts/
+qsub RNAseq_tutorial_fastqc_job.txt
 
+#Check on status of your job
+squeue -u netid
 
 ##Install multiqc
 #Step 1
@@ -70,6 +74,15 @@ conda create --name GVA-multiqc -c bioconda -c conda-forge multiqc fastqc
 
 #Step 2
 conda activate GVA-multiqc
+
+#Run multiqc
+cd /home/netid/RNA_tutorial/Raw_Data/
+mkdir multiqc_raw
+
+multiqc fastqc_raw/ -o multiqc_raw --filename multiqc_raw.html --title "Raw MultiQC Report"
+
+#On your local device, use scp to transfer multiqc_raw.html to your own directory to view
+scp netid@knot7.cnsi.ucsb.edu:/home/netid/RNA_tutorial/Raw_Data/multiqc_raw/multiqc_raw.html /path/to/your/local/directory/
 
 
 
