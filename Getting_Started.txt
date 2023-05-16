@@ -25,7 +25,7 @@ cd RNA_tutorial/Raw_Data
 
 ##Download rnaseq data (DO NOT CLOSE COMPUTER UNTIL TRANSFER IS FINISHED)
 #Enter password when prompted: RNAseqdemo
-scp snbogan@knot7.cnsi.ucsb.edu:/home/snbogan/Cross_pHox_RNA/Raw_FastQs/evxkvqfhx/Un_DTSA735/Project_GHSB_Nova769P_Bogan/tutorial_libs/*.fq.gz
+scp snbogan@knot7.cnsi.ucsb.edu:/home/snbogan/Cross_pHox_RNA/Raw_FastQs/evxkvqfhx/Un_DTSA735/Project_GHSB_Nova769P_Bogan/tutorial_libs/*.fastq.gz /home/netid/RNA_tutorial/Raw_Data
 
 #Create job script directory
 mkdir /home/netid/RNA_tutorial/job_scripts/
