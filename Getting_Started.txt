@@ -83,9 +83,3 @@ multiqc fastqc_raw/ -o multiqc_raw --filename multiqc_raw.html --title "Raw Mult
 
 #On your local device, use scp to transfer multiqc_raw.html to your own directory to view
 scp netid@knot7.cnsi.ucsb.edu:/home/netid/RNA_tutorial/Raw_Data/multiqc_raw/multiqc_raw.html /path/to/your/local/directory/
-
-
-
-
-
-
