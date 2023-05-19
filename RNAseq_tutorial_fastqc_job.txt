@@ -12,7 +12,9 @@ module load fastqc/0.12.1
     
 #Set wd
 cd /home/netid/RNA_tutorial/Raw_Data
-  
+
+mkdir fastqc_raw/
+
 ##Run fastqc in parallel with two files at a time
 # Define the function that will run FastQC on a single file
 run_fastqc() {
